@@ -1,0 +1,153 @@
+body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family:roboto;
+    src: url(../fonts/Roboto-Black.ttf)
+}
+@font-face {
+    font-family:roboto-medium;
+    src: url(../fonts/Roboto-Medium.ttf)
+}
+.login-text{
+    font-family: roboto;
+    font-size: 40px;
+    color: #3678EA ;
+}
+.form-label{
+  font-family: roboto-medium;
+
+}
+
+.navbar li a{
+  font-family: roboto;
+  font-weight:200;
+}
+.navbar li a:hover{
+ color: #3678EA;
+}
+.logo-img{
+  height: 40px;
+}
+
+
+.button-contact{
+  font-family:roboto-medium;
+  background-color: #3678EA;
+  border-radius: 30px;
+  color: white;
+  font-family: roboto-light;
+  padding-top:6px ;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  font-size: 15px;
+  transition: 0.3s;
+  
+
+}
+.button-contact:hover{
+border: 1px solid #3678EA ;
+color:  #3678EA;
+background-color: white;
+
+
+}
+.property-name h3{
+    font-family:roboto-medium;
+    padding-top: 10px;
+
+}
+.property-detail p{
+    font-family:roboto-medium;
+    font-size: 20px;
+  
+
+}
+.property-detail-section p{
+    font-family:roboto-light;
+    font-size: 15px;
+
+}
+
+
+.section-padding{
+    padding-top: 30px;
+}
+
+
+.logo-img{
+    height: 40px;
+}
+
+
+.footer-back{
+ background-color: #091E3D;
+ padding-top: 100px;
+}
+.footer-section-padding{
+ padding: 0px 50px;
+}
+
+
+.footer-back h5{
+    color: white;
+    font-size: 15px;
+  }
+
+  .footer-back p{
+    color:  #4f5154;
+    font-size: 13px;
+  }
+  
+  .socials {
+    display: flex;
+  }
+
+  .icon {
+    background-color: #4f5154;
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    border-radius: 50%; /* This will make the background appear as a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+
+  }
+
+  /* You may also want to style the icon within the .icon container */
+  .icon i {
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .icon i:hover {
+    color: white; 
+    font-size: 20px; 
+
+  }
+
+  .parent{
+	
+    overflow:hidden;
+    position:relative;
+    display:inline-block;
+    cursor:pointer;
+  
+  }
+  .child{
+  
+    background-size:cover;
+    transition:all 0.1s;
+   }
+  
+   .parent:hover .child{
+    transform: scale(0.9);
+   }
+  
+

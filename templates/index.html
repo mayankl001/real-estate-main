@@ -1,0 +1,200 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real Estate - Find Your Dream Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body>
+    <!-- nav section -->
+    <section class="main">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img class="logo-img" src="{% static 'images/Logo.png' %}" alt="Logo"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/properties/">Properties</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about/">About Us</a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            {% if user.is_authenticated %}
+                                <span class="nav-link">Welcome, {{ user.username }}!</span>
+                                <a href="/logout/" class="btn btn-sm btn-danger">Logout</a>
+                            {% else %}
+                                <a href="/login/" class="btn btn-sm btn-primary">Login</a>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section id="home" class="home-carousel-section position-relative">
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/ME4.avif' %}" class="d-block w-100" alt="Beautiful house" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/ME4.avif' %}" class="d-block w-100" alt="Modern property" />
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/ME4.avif' %}" class="d-block w-100" alt="Luxury villa" />
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+            <div class="search-card-overlay">
+                <div class="container">
+                    <div class="search-card mx-auto">
+                        <div class="row mb-4">
+                            <div class="col text-center">
+                                <h3>Search for the Property</h3>
+                            </div>
+                        </div>
+                        <form method="GET" action="/search/" class="row g-3">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                            <input type="text" name="location" class="form-control search-input" placeholder="Enter location" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-home"></i></span>
+                            <select name="type" class="form-select search-input">
+                                <option selected>Property Type</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="house">House</option>
+                                <option value="villa">Villa</option>
+                                <option value="plot">Plot</option>
+                                <option value="office">Office</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-rupee-sign"></i></span>
+                            <input type="number" name="min_price" class="form-control search-input" placeholder="Min Price" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-rupee-sign"></i></span>
+                            <input type="number" name="max_price" class="form-control search-input" placeholder="Max Price" />
+                        </div>
+                    </div>
+                    <div class="col-12 text-center mt-4">
+                        <button type="submit" class="Search-button">Search Properties</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+        </section>
+
+    <!-- property section -->
+    <section id="property" class="property-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12">
+                    <h1>Latest Property<br />For Sale</h1>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <p class="side-text">
+                        Our experts are ready to leverage powerful solutions and resources to get you where you want to be. Connect with us today.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-3" style="padding: 30px 0px">
+                {% for property in properties %}
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt-4 parent">
+                    <div class="card">
+                        <div class="img-area child">
+                            {% if property.image %}
+                                <img class="house-img" src="{{ property.image.url }}" alt="{{ property.title }}"/>
+                            {% else %}
+                                <img class="house-img" src="{% static 'images/house1 (3).jpg' %}" alt="{{ property.title }}"/>
+                            {% endif %}
+                            <div class="des-div">{{ property.property_type|title }}</div>
+                        </div>
+
+                        <div class="text-area">
+                            <h4>${{ property.price|floatformat:0 }} <span>USD</span></h4>
+                            <p class="house-des">{{ property.description|truncatewords:10 }}</p>
+                            <p>
+                                <svg style="color: #3678ea" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                </svg>
+                                <span class="location-text">{{ property.location }}</span>
+                            </p>
+
+                            <div class="row mb-2">
+                                <div class="col-lg-4 col-sm-4 col-4">
+                                    <p><svg xmlns="http://www.w3.org/2000/svg" height="10px" fill="currentColor" class="bi bi-square" viewBox="0 0 16 16">
+                                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/></svg>
+                                    <span style="color: black">{{ property.area|floatformat:0 }}sqft</span></p>
+                                </div>
+                                <div class="col-lg-4 col-sm-4 col-4">
+                                    <span style="color: black">{{ property.bedrooms }} beds</span>
+                                </div>
+                                <div class="col-lg-4 col-sm-4 col-4">
+                                    <span style="color: black">{{ property.bathrooms }} bath</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{% url 'property_detail' property.id %}" class="btn btn-primary w-100">View</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="row mt-4">
+                <div class="col text-center">
+                    <a href="/properties/" class="btn btn-primary btn-lg">View All Properties</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Real Estate. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

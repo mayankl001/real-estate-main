@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 0; margin: 0; overflow-x: hidden; }
+        .navbar li a { font-family: roboto; font-weight: 200; }
+        .navbar li a:hover { color: #3678EA; }
+        .logo-img { height: 40px; }
+        .section-title { font-size: 40px; color: #3678EA; font-weight: 600; margin: 30px 0; }
+        .footer-back { background-color: #091E3D; padding-top: 100px; }
+    </style>
+</head>
+<body>
+    <section class="main">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img class="logo-img" src="/static/images/Logo.png" alt="Logo"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/properties/">Properties</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">About Us</a></li>
+                        <li class="nav-item ms-lg-3">
+                            {% if user.is_authenticated %}
+                                <span class="nav-link">Welcome, {{ user.username }}!</span>
+                                <a href="/logout/" class="btn btn-sm btn-danger">Logout</a>
+                            {% else %}
+                                <a href="/login/" class="btn btn-sm btn-primary">Login</a>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <div class="container" style="padding: 60px 0;">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="section-title">About Our Real Estate Platform</h1>
+                
+                <p class="lead">Welcome to the premier real estate platform connecting buyers and sellers in the digital age. We are committed to making real estate transactions seamless, transparent, and efficient.</p>
+                
+                <h3 class="section-title" style="font-size: 28px; margin-top: 40px;">Our Mission</h3>
+                <p>To revolutionize the real estate industry by providing cutting-edge technology, expert guidance, and unparalleled customer service to millions of buyers and sellers around the world.</p>
+                
+                <h3 class="section-title" style="font-size: 28px; margin-top: 40px;">Why Choose Us?</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h5>Extensive Listings</h5>
+                        <p>Access to over 240,000+ verified property listings across all categories and price ranges.</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5>Expert Agents</h5>
+                        <p>Our team of experienced real estate professionals is ready to guide you through every step of your journey.</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5>Transparent Process</h5>
+                        <p>We believe in complete transparency. No hidden fees, no surprises—just honest real estate transactions.</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5>Secure Platform</h5>
+                        <p>Your data and transactions are protected with state-of-the-art security measures.</p>
+                    </div>
+                </div>
+                
+                <h3 class="section-title" style="font-size: 28px; margin-top: 40px;">Our Track Record</h3>
+                <div class="row text-center">
+                    <div class="col-md-4 mb-4">
+                        <h3 class="text-primary">240k+</h3>
+                        <p>Properties Listed</p>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h3 class="text-primary">100k+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h3 class="text-primary">10+</h3>
+                        <p>Years of Experience</p>
+                    </div>
+                </div>
+                
+                <h3 class="section-title" style="font-size: 28px; margin-top: 40px;">Get Started Today</h3>
+                <p>Whether you're looking to buy, sell, or rent property, we're here to help. Browse our extensive listings or contact our team for personalized assistance.</p>
+                <a href="/properties/" class="btn btn-primary btn-lg">View Properties</a>
+                <a href="/contact/" class="btn btn-outline-primary btn-lg ms-2">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-back text-white mt-5 py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Real Estate. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,826 @@
+@font-face {
+    font-family:roboto;
+    src: url(fonts/Roboto-Black.ttf);
+}
+@font-face {
+    font-family:roboto-light;
+    src: url(fonts/Roboto-Light.ttf);
+}
+@font-face {
+    font-family:roboto-medium;
+    src: url(fonts/Roboto-Medium.ttf);
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+
+}
+.section-padding{
+    padding: 60px 0px;
+}
+
+/* home section */
+
+#home h1{
+    font-size: 50px;
+    font-family: roboto;
+   max-width: 100%;
+}
+.home-text{
+    color: #2c3e50;
+}
+.text p{
+    color: black;
+    font-weight: 700;
+    font-family:roboto-light;
+    max-width: 100%;
+    
+}
+.search-bar{
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border-radius: 30px;
+    box-shadow: 10px 5px 14px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+    width: 80%;
+
+}
+
+.Search-button{
+    border: none;
+    margin-left: -97px;
+    background-color:  #3498db;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 15px;
+    font-family: roboto-light;
+    font-weight: 300;
+    cursor: pointer;
+  
+}
+
+.Search-button:hover{
+  background-color:  #2980b9;
+
+}
+.search-property{
+    display: none;
+}
+.search-card-overlay{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 15px;
+    pointer-events: none;
+}
+.search-card-overlay .container{
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+}
+.search-card{
+    background-color: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 25px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+    padding: 30px;
+    backdrop-filter: blur(16px);
+    width: 100%;
+    max-width: 1180px;
+}
+@media (max-width: 991px) {
+    .search-card-overlay {
+        bottom: -80px;
+    }
+}
+@media (max-width: 767px) {
+    .search-card {
+        padding: 20px;
+    }
+}
+.overlay-search{
+    background-color: rgba(255, 255, 255, 0.96);
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+    padding: 25px;
+    margin-top: 40px;
+}
+.home-carousel-section{
+    position: relative;
+    margin-bottom: 0;
+    height: 80vh;
+}
+.home-carousel-section .carousel-item{
+    height: 80vh;
+}
+.home-carousel-section .carousel-item img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.carousel-overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.55) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    z-index: 2;
+}
+.carousel-overlay h1,
+.carousel-overlay p,
+.carousel-overlay h3{
+    color: white;
+}
+.carousel-overlay h3{
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+.carousel-overlay .search-input{
+    border-radius: 12px;
+}
+.carousel-overlay .input-group-text{
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px 0 0 12px;
+}
+.carousel-overlay .form-select{
+    border-radius: 0 12px 12px 0;
+    border-left: none;
+}
+.carousel-overlay .Search-button{
+    width: 100%;
+    margin-left: 0;
+}
+@media (max-width: 768px) {
+    .carousel-overlay{
+        padding: 30px 15px;
+    }
+    .carousel-overlay .overlay-search{
+        padding: 20px;
+    }
+}
+.stats-section{
+    padding: 40px 0px;
+}
+.stats-section h3{
+    font-family: roboto;
+    font-size: 20px;
+}
+.stats-section p{
+    font-family: roboto-light;
+
+}
+
+.navbar li a{
+    font-family: roboto;
+    font-weight:200;
+}
+.navbar li a:hover{
+   color: #3498db;
+}
+.logo-img{
+    height: 100px;
+}
+
+
+.button-contact{
+    background-color: #3498db;
+    border-radius: 30px;
+    color: white;
+    font-family: roboto-light;
+    padding-top:6px ;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    font-size: 15px;
+    transition: 0.3s;
+
+}
+.button-contact:hover{
+  border: 1px solid #3498db ;
+  color:  #3498db;
+ background-color: white;
+  
+
+}
+.login-btn{
+    background-color: #3498db;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 8px 16px;
+    font-family: roboto-light;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.login-btn:hover{
+    background-color: #2980b9;
+    color: white;
+}
+
+
+/* client section */
+
+
+.client-img{
+  height: 80px;
+}
+
+.text-center h1{
+  font-family: roboto;
+}
+
+/* properties section */
+
+.card{
+    box-shadow: 10px 5px 14px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+.img-area{
+ 
+    position: relative;
+   
+   
+}
+.house-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+   
+}
+.des-div{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: #F28823;
+    font-family: roboto-medium;
+    font-size: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: white;
+    font-weight: 100;
+
+}
+
+.text-area{
+    margin-top: 14px;
+    padding-left: 17px;
+    padding-right: 17px;
+}
+
+.property-section h1{
+    font-family: roboto;
+    
+}
+.side-text{
+    font-family: roboto-light;
+    font-size: 14px;
+    color: rgb(174, 166, 166);
+    font-weight: 600;
+ 
+} 
+
+.text-area h4{
+    font-family: roboto-medium;
+    color: #2c3e50;
+    font-size: 20px;
+}
+.text-area span{
+    font-family: roboto-medium;
+    color:rgb(158, 150, 150);
+    font-size: 13px;
+}
+
+.house-des{
+    font-family: roboto-medium;
+    font-weight: 700;
+}
+
+.button-div{
+    display: flex;
+    justify-content: center;
+}
+.property-button{
+    background-color: #d1e1fb;
+    border-radius: 30px;
+    color: #3498db;
+    font-family: roboto-medium;
+    font-weight: 700;
+    padding-top:10px ;
+    padding-bottom: 10px;
+    padding-left: 23px;
+    padding-right: 23px;
+    border: none;
+    font-size: 15px;
+    transition: 0.3s;
+   
+}
+.property-button:hover{
+  padding-left: 33px;
+  padding-right: 33px;
+ 
+}
+
+/* service section */
+
+  .colored-div {
+    width: 100%;
+    min-width: 400px; /* Set the width to 50% for half of the container */
+    min-height: 300px; /* Set a minimum height for all screens */
+    height: 50%; /* Take 50% height of the parent container initially */
+    background-color: #3678EA;
+  }
+  
+.service-card{
+ padding-left: 35px;
+    padding-right: 20px;
+    padding-top: 60px;
+    padding-bottom: 30px; 
+
+}
+
+.service-card p{
+    font-family: roboto-medium;
+    color:rgb(158, 150, 150);
+    font-size: 15px;
+}
+
+.service-card a{
+  font-family: roboto;
+  font-weight: 200; 
+text-decoration: none;
+
+}
+
+.card-1{
+    margin-top: -160px;
+
+}
+.card-2{
+    margin-top: -160px;
+
+}
+.card-3{
+    margin-top: -30px;
+    margin-left: 100px;
+
+}
+.service-text{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.responsive-col{
+   
+}
+ .hide-text{
+    display: none;
+
+ }
+ .row-padding{
+    padding-left: 50px;
+    padding-right: 50px;
+ }
+
+ /* teams section */
+
+.team-card{
+    background-color: #F6F9FE;
+    height: 100%;
+    width: 100%;
+   
+}
+ .img-area-team{
+
+   
+    height: 100%;
+    width: 100%;
+   
+   
+}
+.team-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+   
+}
+.text-area-team{
+    margin-top: 10px;
+    
+    
+
+}
+.text-area-team h4{
+  font-family: roboto-medium;
+  font-size: 18px;
+ 
+}
+.text-area-team p{
+    font-family: roboto-light;
+    font-size: 14px;
+    color: rgb(175, 171, 171);
+    font-weight: 800;
+   
+  }
+
+  /* review section */
+
+.review-section-padding
+  {
+    padding: 0px 40px;
+  }
+  .review-card{
+    padding-left: 20px;
+    padding-right:20px;
+   
+  }
+  .review-div{
+    display: flex;
+    gap: 10px ; 
+    justify-content: center; 
+    align-items: center;
+  }
+  .review-text{
+    font-family: roboto-light;
+    font-weight:700;
+    font-size: 13px;
+    width: 100%;
+
+  }
+
+  .review-text span{
+    font-family: roboto-medium;
+    font-weight:700;
+    font-size: 13px;
+
+  }
+  .review-img{
+    border-radius: 70px;
+    margin-bottom: 10px;
+  }
+    .colored-div-2 {
+
+    width: 100%;
+    min-width: 400px; 
+    min-height: 200px;
+    height: 50%;
+    background-color: #3678EA;
+  }
+
+  .overlapping-row {
+    margin-bottom: -15px; 
+    position: relative;
+    z-index: 1; 
+  }
+  .overlapping-row-2 {
+    margin-bottom: -90px; 
+    position: relative;
+    z-index: 1; 
+  }
+
+  /* .query section */
+
+  .query-text h1{
+    font-family: roboto;
+
+  }
+  .query-text button{
+    font-family: roboto-medium;
+    border: none;
+    background-color:  #3678EA;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 4px;
+    font-weight: 300;
+
+
+  }
+
+  .accordion h2{
+    font-family: roboto-medium;
+
+  }
+  .accordion p{
+    font-family: roboto-medium;
+    color: rgb(183, 178, 178);
+    font-size: 16px;
+
+  }
+
+  /* Footer section */
+
+  .colored-div-3 {
+    
+   
+       width: 100%;
+       min-width: 250px; /* Set the width to 50% for half of the container */
+       min-height: 200px; /* Set a minimum height for all screens */
+       height: 50%; /* Take 50% height of the parent container initially */
+       background-color: #3678EA;
+       background: cover;
+     }
+  .footer-col-1{
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+  }
+  .footer-col-2{
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+  }
+  .footer-text h2{
+    font-family: roboto-medium;
+    color: white;
+    cursor: pointer;
+  }
+  .footer-text p{
+    font-family: roboto-light;
+    color: white;
+    cursor: pointer;
+  }
+  .footer-back{
+    background-color: #091E3D;
+    padding-top: 100px;
+  }
+  .footer-section-padding{
+    padding: 0px 50px;
+  }
+  .search-bar-footer{
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border-radius: 30px;
+    box-shadow: 10px 5px 14px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    width: 80%;
+
+}
+
+.Search-button-footer{
+    border: none;
+    margin-left: -97px;
+    background-color:  #3678EA;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 15px;
+    font-family: roboto-light;
+    font-weight: 300;
+    cursor: pointer;
+  
+
+}
+
+.Search-button-footer:hover{
+  
+  background-color:  #719ae1;
+  
+}
+  .overlapping-row-footer {
+    margin-bottom: -75px; /* Adjust the value to control the amount of overlap */
+    position: relative;
+    z-index: 1; /* Ensure the overlapping row appears above the other */
+  }
+
+  .footer-back h5{
+    color: white;
+    font-size: 15px;
+  }
+
+  .footer-back p{
+    color:  #4f5154;
+    font-size: 13px;
+  }
+  
+  .socials {
+    display: flex;
+  }
+
+  .icon {
+    background-color: #4f5154;
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    border-radius: 50%; /* This will make the background appear as a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+
+  }
+
+  /* You may also want to style the icon within the .icon container */
+  .icon i {
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .icon i:hover {
+    color: white; 
+    font-size: 20px; 
+
+  }
+
+  .parent{
+	
+    overflow:hidden;
+    position:relative;
+    display:inline-block;
+    cursor:pointer;
+  
+  }
+  .child{
+  
+    background-size:cover;
+    transition:all 0.1s;
+   }
+  
+   .parent:hover .child{
+    transform: scale(0.9);
+   }
+  
+ /* reposive css */
+
+ @media (max-width: 1040px) {
+    /* Media query for screens smaller than or equal to 767px (small screens) */
+    .service-text{
+        margin-top: 40px;
+        
+    }
+    .card-3{
+        margin-top: 40px;
+       
+    
+    }
+
+}
+
+@media (max-width: 1200px ) and  (min-width: 992px ) {
+  
+    .text-area span{
+    
+        font-size: 10px;
+    }
+    .overlapping-row {
+        margin-bottom: 15px; 
+      }
+      .overlapping-row-2 {
+        margin-bottom: -75px; /* Adjust the value to control the amount of overlap */
+        position: relative;
+        z-index: 1; /* Ensure the overlapping row appears above the other */
+      }
+  
+   
+}
+@media (max-width:991px) {
+    .overlapping-row {
+        margin-bottom: -105px; 
+      }
+      .overlapping-row-2 {
+        margin-bottom: -55px; /* Adjust the value to control the amount of overlap */
+        position: relative;
+        z-index: 1; /* Ensure the overlapping row appears above the other */
+      }
+      .footer-col-1{
+        margin-top: 10px;
+        margin-bottom: 5px;
+    
+      }
+      .footer-col-2{
+        margin-top:5px;
+        margin-bottom: 5px;
+    
+      }
+    
+}
+@media (max-width: 767px) {
+    /* Media query for screens smaller than or equal to 767px (small screens) */
+    .center-text {
+        text-align: center;
+    }
+   
+    .text-area span{
+    
+        font-size: 14px;
+    }
+    .card-1{
+        margin-top: -280px;
+    
+    }
+    .card-2{
+        margin-top: 15px;
+    
+    }
+    .card-3{
+        margin-top: 10px;
+        margin-left: 0px;
+    
+    }
+    .service-text{
+     display: none;
+    }
+    .hide-text{
+        display:block;
+        margin-bottom: 45px;
+    }
+
+    .colored-div {
+       
+           min-height: 50px; 
+           height: 20%;
+           min-width: 300px;
+         }
+
+
+           .colored-div-2 {
+    
+               min-width: 300px; 
+             }
+
+         
+         .row-padding{
+            padding-left: 15px;
+            padding-right: 10px;
+         }
+         .overlapping-row {
+            margin-bottom: 15px; 
+          }
+          .overlapping-row-2 {
+            margin-bottom: -55px;
+            position: relative;
+            z-index: 1;
+          }
+
+          .footer-text h2{
+            font-size: 20px;
+           
+          }
+          .footer-text p{
+            font-size: 11px;
+       
+          }
+
+          .footer-section-padding{
+            padding: 0px 20px;
+          }
+}
+
+@media (max-width: 550px) {
+   
+    .row-padding{
+        padding-left: 20px;
+        padding-right: 0px;
+     }
+    .card-1{
+        margin-top: -500px;
+    
+    }
+    .card-2{
+        margin-top: -200px;
+    
+    }
+    .card-3{
+        margin-top: 10px;
+        margin-left: 0px;
+    
+    }
+    .service-text{
+     display: none;
+    }
+    .hide-text{
+        display:block;
+    }
+
+
+
+}
+
+
